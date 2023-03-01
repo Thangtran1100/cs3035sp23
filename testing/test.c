@@ -1,67 +1,44 @@
 #include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
 
-int bunnyEars(int n)
+struct PythagoreanTriple
 {
-    if(n < 0)
+    double sideA;
+    double sideB;
+    double hyp;
+
+    void getTwoSides(double sideAIn, double sideBIn)
     {
-        return -1;
+        sideA = sideAIn;
+        sideB = sideBIn;
     }
 
-    if(n == 0)
+    void getSideAndHyp(double sideAIn, double hypIn)
     {
-        return 0;
+        sideA = sideAIn;
+        hyp = hypIn;
     }
+};
 
-    return 2 + bunnyEars(n - 1);
+
+PythagoreanTriple* get_info_triangle(int arraySize)
+{
+    PythagoreanTriple* triangle = (PythagoreanTriple*) malloc(arraySize*sideof(PythagoreanTriple));
+
+    int arrayIndex = 0;
+    
+    for(int indexRow = 0; indexRow <= 3; indexRow++)
+    {
+        for(int indexColumn = 0; indexColumn <= 3; indexColumn++)
+        {
+            
+        }
+    }
 }
 
-int fibo(int n)
+void main()
 {
-    if(n == 0)
-    {
-        return 0;
-    }
+    struct PythagoreanTriple triangle;
 
-    if(n ==1 || n == 2)
-    {
-        return 1;
-    }
-
-    return fibo(n - 1) + fibo(n - 2);
-}
-
-int posPow(int base, int exp)
-{
-    if(exp < 0)
-    {
-        return -1;
-    }
-
-    if(exp == 0)
-    {
-        return 1;
-    }
-
-    return base * posPow(base, exp - 1);
-}
-
-
-int numDigit(int n)
-{
-    if(n / 10 == 0)
-    {
-        return 1;
-    }
-
-    return 1 + numDigit(n / 10);
-}
-
-
-int main()
-{
-    int result = numDigit(213);
-
-    printf("%d\n", result);
-
-    return 0;
 }
