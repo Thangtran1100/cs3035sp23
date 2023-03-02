@@ -1,44 +1,58 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
-struct PythagoreanTriple
+typedef struct
 {
     double sideA;
     double sideB;
     double hyp;
+} PythagoreanTriple;
 
-    void getTwoSides(double sideAIn, double sideBIn)
-    {
-        sideA = sideAIn;
-        sideB = sideBIn;
-    }
+// PythagoreanTriple* create_triangle()
+// {
+//     struct PythagoreanTriple* triangle = (PythagoreanTriple*) malloc(3 * sizeof(PythagoreanTriple));
 
-    void getSideAndHyp(double sideAIn, double hypIn)
-    {
-        sideA = sideAIn;
-        hyp = hypIn;
-    }
-};
+//     int arrayIndex = 0;
+
+//     for(int indexRow = 0; indexRow <= 3; indexRow++)
+//     {
+//         for(int indexCol = 0; indexCol <= 3; indexCol++)
+//         {
+//             triangle[arrayIndex]
+//         }
+//     }
+// }
 
 
-PythagoreanTriple* get_info_triangle(int arraySize)
+void getTwoSides(PythagoreanTriple *triangle, double sideAIn, double sideBIn)
 {
-    PythagoreanTriple* triangle = (PythagoreanTriple*) malloc(arraySize*sideof(PythagoreanTriple));
+    triangle->sideA = sideAIn;
+    triangle->sideB = sideBIn;
+    triangle->hyp = sqrt(pow(sideAIn, 2) + pow(sideBIn, 2));
+}
 
-    int arrayIndex = 0;
-    
-    for(int indexRow = 0; indexRow <= 3; indexRow++)
+void getSideAndHyp(PythagoreanTriple *triangle, double sideAIn, double hypIn)
+{
+    triangle->sideA = sideAIn;
+    triangle->hyp = hypIn;
+
+    triangle->sideB = sqrt(pow(hypIn, 2) - pow(sideAIn, 2));
+}
+
+void print_pythagorean_triples(PythagoreanTriple *triangle)
+{
+    for (int i = 0; i < 3; i++)
     {
-        for(int indexColumn = 0; indexColumn <= 3; indexColumn++)
-        {
-            
-        }
+        printf("(%d, %d, %d)\n", triangle[i].sideA, triangle[i].sideB, triangle[i].hyp);
     }
 }
 
 void main()
 {
-    struct PythagoreanTriple triangle;
+    // struct PythagoreanTriple *triangle = (PythagoreanTriple *)malloc(3 * sizeof(PythagoreanTriple));
 
+    // getTwoSides(triangle, 3, 4);
+
+    // print_pythagorean_triples(triangle);
 }
