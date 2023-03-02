@@ -1,15 +1,3 @@
-matrixA = [[1,7,6],
-           [2,5,4],
-           [3,1,2]]
-
-matrixB = [[3,4,2],
-           [4,4,3],
-           [3,7,6]]
-
-sumMatrices = [[0,0,0],
-               [0,0,0],
-               [0,0,0]]
-
 def matrixAdd(matrixA, matrixB):
     for indexRow in range(len(matrixA)):
         for indexCol in range(len(matrixA[0])):
@@ -26,6 +14,19 @@ def matrixAddString(matrixA, matrixB):
 
     for index in sumMatrices:
         print(index)
+
+
+matrixA = [[1,7,6],
+           [2,5,4],
+           [3,1,2]]
+
+matrixB = [[3,4,2],
+           [4,4,3],
+           [3,7,6]]
+
+sumMatrices = [[0,0,0],
+               [0,0,0],
+               [0,0,0]]
 
 
 matrixAdd(matrixA, matrixB)
