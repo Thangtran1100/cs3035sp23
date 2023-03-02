@@ -29,6 +29,7 @@ void getTwoSides(PythagoreanTriple *triangle, double sideAIn, double sideBIn)
 {
     triangle->sideA = sideAIn;
     triangle->sideB = sideBIn;
+
     triangle->hyp = sqrt(pow(sideAIn, 2) + pow(sideBIn, 2));
 }
 
@@ -44,15 +45,17 @@ void print_pythagorean_triples(PythagoreanTriple *triangle)
 {
     for (int i = 0; i < 3; i++)
     {
-        printf("(%d, %d, %d)\n", triangle[i].sideA, triangle[i].sideB, triangle[i].hyp);
+        printf("(%f, %f, %f)\n", triangle[i].sideA, triangle[i].sideB, triangle[i].hyp);
     }
 }
 
 void main()
 {
-    // struct PythagoreanTriple *triangle = (PythagoreanTriple *)malloc(3 * sizeof(PythagoreanTriple));
+    struct PythagoreanTriple *triangle = (PythagoreanTriple *)malloc(3 * sizeof(PythagoreanTriple));
 
-    // getTwoSides(triangle, 3, 4);
+    getTwoSides(triangle, 3, 4);
 
-    // print_pythagorean_triples(triangle);
+    print_pythagorean_triples(triangle);
+
+    free(triangle);
 }
