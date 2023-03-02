@@ -25,9 +25,9 @@ void getSideAndHyp(PythagoreanTriple *triangle, double sideAIn, double hypIn)
     triangle->sideB = sqrt(pow(hypIn, 2) - pow(sideAIn, 2));
 }
 
-void main()
+int main()
 {
-    PythagoreanTriple *triangle = malloc(3* sizeof(PythagoreanTriple));
+    PythagoreanTriple *triangle = (PythagoreanTriple*) malloc(3* sizeof(PythagoreanTriple));
 
     getTwoSides(&triangle[0], 3, 4);
     getTwoSides(&triangle[1], 6, 8);
@@ -38,4 +38,6 @@ void main()
     printf("PythTriple [sideA = %f, sideB = %f, hyp = %f]\n", triangle[2].sideA, triangle[2].sideB, triangle[2].hyp);
 
     free(triangle);
+
+    return 0;
 }
