@@ -9,6 +9,7 @@ typedef struct
     double hyp;
 } PythagoreanTriple;
 
+
 void getTwoSides(PythagoreanTriple *triangle, double sideAIn, double sideBIn)
 {
     triangle->sideA = sideAIn;
@@ -25,7 +26,7 @@ void getSideAndHyp(PythagoreanTriple *triangle, double sideAIn, double hypIn)
     triangle->sideB = sqrt(pow(hypIn, 2) - pow(sideAIn, 2));
 }
 
-int main()
+void main()
 {
     PythagoreanTriple *triangle = (PythagoreanTriple*) malloc(3* sizeof(PythagoreanTriple));
 
@@ -38,6 +39,4 @@ int main()
     printf("PythTriple [sideA = %f, sideB = %f, hyp = %f]\n", triangle[2].sideA, triangle[2].sideB, triangle[2].hyp);
 
     free(triangle);
-
-    return 0;
 }
