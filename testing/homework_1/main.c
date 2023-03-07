@@ -35,7 +35,7 @@ void calcPaychecks()
 	
 	wage_avg /= (double)index;
 
-	printf("Average wage: %.2f\n", wage_avg);
+	printf("Average wage: $%.2f\n", wage_avg);
 
     return;
 }
